@@ -1,0 +1,34 @@
+<p>tester works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12"></div>
+    <app-book></app-book>
+    <app-category></app-category>
+    <app-book></app-book>
+    <app-dashboard></app-dashboard>
+  </div>
+</div>
+
+<input type="text" [(ngModel)]="name" />
+
+<p>{{ name }}</p>
+
+<!-- ------------------------------- Looping ------------------------------- -->
+<ul>
+  <li *ngFor="let student of students">
+    {{ student }}
+  </li>
+</ul>
+
+<!-- ------------------------------ Templates ------------------------------ -->
+<ng-template #thenTemplateName>If isValid is true</ng-template>
+
+<ng-template #elseTemplateName>If isValid is false </ng-template>
+
+<div *ngIf="isValid; then thenTemplateName; else elseTemplateName">
+  Here is never showing
+</div>
+
+<app-success> </app-success>
+<app-warning> </app-warning>
