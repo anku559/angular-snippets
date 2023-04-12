@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'test-property-bind',
   template: `
     <div class="container">
-      <p [className]="userStatus">Status</p>
+      <p [className]="status">Status</p>
       <button class="btn btn-primary" [disabled]="!ADD_SERVER">
         Add Server
       </button>
@@ -33,10 +33,11 @@ export class PropertyBindingComponent {
   constructor() {
     setTimeout(() => {
       this.ADD_SERVER = true;
+      this.STATUS = 'online';
     }, 5000);
   }
 
-  get userStatus(): string {
-    return this.STATUS;
+  get status(): string {
+    return this.STATUS === 'offline' ? 'offline' : 'online';
   }
 }

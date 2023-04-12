@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './playground.component.html',
   styleUrls: ['./playground.component.scss'],
 })
-export class PlaygroundComponent {}
+export class PlaygroundComponent {
+  displayStatus = false;
+  log: number[] = [];
+
+  onToggleDetails() {
+    this.displayStatus = !this.displayStatus;
+    this.log.push(this.log.length + 1);
+  }
+}
